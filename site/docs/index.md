@@ -24,21 +24,16 @@ features:
 
 <style>
 :root {
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #41d1ff);
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
-  --vp-home-hero-image-filter: blur(44px);
+  --vp-home-hero-name-color: var(--c-orange);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(194, 65, 12, 0.06) 50%, rgba(14, 124, 102, 0.04) 50%);
+  --vp-home-hero-image-filter: blur(80px);
 }
-
-@media (min-width: 640px) {
-  :root {
-    --vp-home-hero-image-filter: blur(56px);
-  }
+.VPHome .VPHero .action .VPButton.alt {
+  border-color: var(--c-line);
+  color: var(--c-ink);
 }
-
-@media (min-width: 960px) {
-  :root {
-    --vp-home-hero-image-filter: blur(68px);
-  }
+.VPHome .VPHero .action .VPButton.alt:hover {
+  border-color: var(--c-orange);
+  color: var(--c-orange);
 }
 </style>

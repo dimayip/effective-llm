@@ -1,30 +1,267 @@
-/* Custom styles for Effective LLM */
+/* ────────────────────────────────────────
+   Effective LLM · Atelier Zero / 橙皮书设计体系
+   奶油底 + 赤陶橙 + 暖黄线 + 衬线中文
+   ──────────────────────────────────────── */
 
-/* Improve blockquote styling */
-.custom-blockquote {
-  border-left: 4px solid var(--vp-c-brand-1);
-  padding: 8px 16px;
-  background: var(--vp-c-default-soft);
+/* ── Design tokens ───────────────────── */
+:root {
+  /* Atelier Zero color tokens */
+  --c-cream: #FDF8EE;
+  --c-cream-deep: #F7EFDF;
+  --c-paper: #FFFFFF;
+  --c-ink: #1A1A1A;
+  --c-muted: #6B6B6B;
+  --c-line: #E5DCC6;
+  --c-line-soft: #F0E6D2;
+  --c-orange: #C2410C;
+  --c-orange-deep: #9A3412;
+  --c-orange-bg: #FFEDD5;
+  --c-orange-line: #FED7AA;
+  --c-teal: #0E7C66;
+  --c-teal-bg: #CCFBF1;
+
+  /* Map to VitePress variables */
+  --vp-c-brand-1: var(--c-orange);
+  --vp-c-brand-2: var(--c-orange-deep);
+  --vp-c-brand-3: #7C2D12;
+  --vp-c-brand-soft: var(--c-orange-bg);
+
+  --vp-c-bg: var(--c-cream);
+  --vp-c-bg-soft: var(--c-cream-deep);
+  --vp-c-bg-mute: var(--c-cream-deep);
+  --vp-c-bg-alt: var(--c-paper);
+
+  --vp-c-text-1: var(--c-ink);
+  --vp-c-text-2: var(--c-muted);
+  --vp-c-text-3: #9A9A9A;
+
+  --vp-c-border: var(--c-line);
+  --vp-c-divider: var(--c-line);
+  --vp-c-default-soft: var(--c-cream-deep);
+
+  --vp-c-gutter: var(--c-line-soft);
+
+  /* Fonts */
+  --vp-font-family-base: 'Inter', 'PingFang SC', 'Noto Sans SC',
+    'Source Han Sans CN', 'Microsoft YaHei', system-ui, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono',
+    Menlo, monospace;
+
+  /* Serif for Chinese body (book feel) */
+  --font-cn-serif: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', Georgia, serif;
+
+  /* Button brand overrides */
+  --vp-button-brand-bg: var(--c-orange);
+  --vp-button-brand-text: var(--c-paper);
+  --vp-button-brand-hover-bg: var(--c-orange-deep);
+  --vp-button-brand-active-bg: #7C2D12;
+
+  /* Home hero */
+  --vp-home-hero-name-color: var(--c-orange);
+}
+
+/* Dark mode — muted warm tones */
+.dark {
+  --c-cream: #1C1917;
+  --c-cream-deep: #231F1B;
+  --c-paper: #292524;
+  --c-ink: #FAFAF9;
+  --c-muted: #A8A29E;
+  --c-line: #44403C;
+  --c-line-soft: #3D3835;
+  --c-orange: #FB923C;
+  --c-orange-deep: #F97316;
+  --c-orange-bg: rgba(251, 146, 60, 0.12);
+  --c-orange-line: rgba(251, 146, 60, 0.25);
+  --c-teal: #34D399;
+  --c-teal-bg: rgba(52, 211, 153, 0.12);
+
+  --vp-c-brand-1: var(--c-orange);
+  --vp-c-brand-2: var(--c-orange-deep);
+  --vp-c-brand-3: #EA580C;
+  --vp-c-brand-soft: var(--c-orange-bg);
+
+  --vp-c-bg: var(--c-cream);
+  --vp-c-bg-soft: var(--c-cream-deep);
+  --vp-c-bg-mute: var(--c-cream-deep);
+  --vp-c-bg-alt: var(--c-paper);
+
+  --vp-c-text-1: var(--c-ink);
+  --vp-c-text-2: var(--c-muted);
+  --vp-c-text-3: #78716C;
+
+  --vp-c-border: var(--c-line);
+  --vp-c-divider: var(--c-line);
+  --vp-c-default-soft: var(--c-cream-deep);
+
+  --vp-c-gutter: var(--c-line-soft);
+
+  --vp-button-brand-bg: var(--c-orange);
+  --vp-button-brand-text: #1C1917;
+  --vp-button-brand-hover-bg: var(--c-orange-deep);
+  --vp-button-brand-active-bg: #EA580C;
+}
+
+/* ── 1. Body & base ──────────────────── */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── 2. Doc content — book typography ── */
+.vp-doc p,
+.vp-doc li {
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+/* ── 3. Headings ─────────────────────── */
+.vp-doc h1 {
+  font-size: 2em;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--c-line);
+}
+
+.vp-doc h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 2.5em;
+  padding-left: 14px;
+  border-left: 3px solid var(--c-orange);
+}
+
+.vp-doc h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 2em;
+}
+.vp-doc h3::before {
+  content: '§ ';
+  color: var(--c-orange);
+  font-weight: 700;
+}
+
+/* ── 4. Inline code ──────────────────── */
+.vp-doc :not(pre) > code {
+  background: var(--c-cream-deep);
+  color: var(--c-orange);
+  padding: 2px 6px;
   border-radius: 4px;
+  font-size: 0.9em;
 }
 
-/* Better code block contrast */
-.vp-doc div[class*='language-'] {
+/* ── 5. Links ────────────────────────── */
+.vp-doc a:not(.header-anchor) {
+  color: var(--c-orange);
+  text-decoration: underline;
+  text-decoration-color: var(--c-orange-line);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.vp-doc a:not(.header-anchor):hover {
+  color: var(--c-orange-deep);
+  text-decoration-color: var(--c-orange-deep);
+}
+
+/* ── 6. Blockquotes / custom blocks ──── */
+.vp-doc .custom-block {
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+.vp-doc blockquote {
+  border-left-color: var(--c-orange);
+  color: var(--c-muted);
+  font-style: normal;
+  background: var(--c-cream-deep);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 20px;
+}
+
+/* ── 7. Tables ───────────────────────── */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.95em;
+  box-shadow: 0 0 0 1px var(--c-line);
   border-radius: 8px;
+  overflow: hidden;
+}
+.vp-doc th {
+  font-weight: 600;
+  background: var(--c-cream-deep);
+  border-bottom: 1px solid var(--c-line);
+}
+.vp-doc td {
+  border-bottom: 1px solid var(--c-line-soft);
+}
+.vp-doc tr:nth-child(2n) {
+  background: var(--c-cream-deep);
+}
+.vp-doc tr:hover {
+  background: var(--c-orange-bg);
+}
+.vp-doc table code {
+  background: var(--c-cream-deep);
+  color: var(--c-orange);
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-size: 0.9em;
 }
 
-/* Sidebar active item */
+/* ── 8. Code blocks ──────────────────── */
+.vp-doc div[class*='language-'] {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px -8px rgba(26, 26, 26, 0.15);
+}
+
+/* ── 9. Sidebar active item ──────────── */
 .VPSidebarItem.is-active .link {
-  color: var(--vp-c-brand-1);
+  color: var(--c-orange);
 }
 
-/* Feature card hover effect */
+/* ── 10. Feature cards ───────────────── */
+.VPFeature {
+  border-color: var(--c-line);
+  transition: border-color 0.25s, transform 0.2s;
+}
 .VPFeature:hover {
-  border-color: var(--vp-c-brand-1);
-  transition: border-color 0.25s;
+  border-color: var(--c-orange-line);
+  transform: translateY(-2px);
 }
 
-/* Print styles for PDF export */
+/* ── 11. Nav bar ─────────────────────── */
+.VPNav {
+  background: var(--c-cream) !important;
+}
+.dark .VPNav {
+  background: var(--c-cream) !important;
+}
+
+/* ── 12. Sidebar background ──────────── */
+.VPSidebar {
+  background: var(--c-cream) !important;
+}
+.dark .VPSidebar {
+  background: var(--c-cream) !important;
+}
+
+/* ── 13. Footer ──────────────────────── */
+.VPFooter {
+  background: var(--c-cream-deep) !important;
+  border-top: 1px solid var(--c-line);
+}
+
+/* ── 14. Local nav ───────────────────── */
+.VPLocalNav {
+  background: var(--c-cream) !important;
+  border-bottom: 1px solid var(--c-line);
+}
+
+/* ── Print styles for PDF export ─────── */
 @media print {
   .VPLocalNav,
   .VPNav,
@@ -45,5 +282,6 @@
 
   body {
     font-size: 12pt;
+    background: white;
   }
 }
