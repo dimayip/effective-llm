@@ -1,0 +1,25 @@
+# ── 依赖 ──
+site/node_modules
+
+# ── 脚本生成：site/docs/ 下的 Markdown 页面 ──
+# 由 `node site/scripts/sync-docs.mjs` 从 effective-llm.md 拆分生成
+# 运行 `npm run dev` 或 `npm run build` 时自动同步
+site/docs/preface.md
+site/docs/part1/
+site/docs/part2/
+site/docs/part3/
+site/docs/part4/
+site/docs/part5/
+site/docs/appendix/
+site/docs/public/
+
+# ── VitePress 构建产物 ──
+site/docs/.vitepress/cache/
+site/docs/.vitepress/dist/
+
+# ── PDF 导出产物 ──
+# 由 `npm run export-pdf` 生成
+site/effective-llm.pdf
+
+# ── Agent skills（由 skills-lock.json 管理） ──
+.agents

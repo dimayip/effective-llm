@@ -1,0 +1,17 @@
+{
+  "name": "effective-llm-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "sync": "node scripts/sync-docs.mjs",
+    "dev": "node scripts/sync-docs.mjs && vitepress dev docs",
+    "build": "node scripts/sync-docs.mjs && vitepress build docs",
+    "preview": "vitepress preview docs",
+    "export-pdf": "press-export-pdf docs && cp effective-llm.pdf docs/public/effective-llm.pdf"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3",
+    "vitepress-export-pdf": "^1.0.0",
+    "vue": "^3.5.13"
+  }
+}

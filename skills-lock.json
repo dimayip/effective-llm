@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "063a0e6448123cd359ad0044cc46b0e490cc7964d45ef4bb9fd842bd2ffbca67"
+    },
+    "huashu-md-html": {
+      "source": "alchaincyf/huashu-md-html",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "3b0827f1de400c46b570ccaee3597df91575eb728597c11ac4abf82391397d76"
+    },
+    "qiaomu-epub-book-generator": {
+      "source": "joeseesun/qiaomu-epub-book-generator",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "5dbbbf8f8eb22618fad9a023bc975a38a649cbd1e213b1e90cadb5027243cb25"
+    }
+  }
+}

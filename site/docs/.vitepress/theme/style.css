@@ -1,0 +1,49 @@
+/* Custom styles for Effective LLM */
+
+/* Improve blockquote styling */
+.custom-blockquote {
+  border-left: 4px solid var(--vp-c-brand-1);
+  padding: 8px 16px;
+  background: var(--vp-c-default-soft);
+  border-radius: 4px;
+}
+
+/* Better code block contrast */
+.vp-doc div[class*='language-'] {
+  border-radius: 8px;
+}
+
+/* Sidebar active item */
+.VPSidebarItem.is-active .link {
+  color: var(--vp-c-brand-1);
+}
+
+/* Feature card hover effect */
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-1);
+  transition: border-color 0.25s;
+}
+
+/* Print styles for PDF export */
+@media print {
+  .VPLocalNav,
+  .VPNav,
+  .VPFooter,
+  .VPSidebar,
+  .VPDocFooter,
+  .back-to-top {
+    display: none !important;
+  }
+
+  .VPContent {
+    padding: 0 !important;
+  }
+
+  .VPDoc .content-container {
+    max-width: 100% !important;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+}
