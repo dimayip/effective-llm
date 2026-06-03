@@ -34,7 +34,7 @@ LLM 的发布周期是月而不是年。每隔几周，就会有一个新模型�
 > - 第一遍：跳着看 *Things to Remember*，建立索引；
 > - 第二遍：按 Part 顺序通读，理解为什么；
 > - 第三遍：在生产事故复盘时回查相关 Item。
-> - **读完即用**：把 [`AGENTS.md`](./AGENTS.md) 放进项目根目录（Agent 自动加载规则）；让团队读 [`README.md`](./README.md)（5 分钟建立心智模型）。
+> - **读完即用**：把 [`AGENTS.md`](./quickly/AGENTS.md) 放进项目根目录（Agent 自动加载规则）；让团队读 [`HUMANS.md`](./quickly/HUMANS.md)（5 分钟建立心智模型）。
 
 LLM 工程不是炼丹，是工程。把它当数据库去用，它会让你失望；把它当一个会出错的概率系统去用，再用确定性系统把它包起来——这就是这本书的全部主张。
 
@@ -1402,7 +1402,7 @@ LLM 的隐性偏好（位置、长度、自家、谄媚、锚定）只能通过*
 
 > 读完本书后，以下两份配套文档可立即投入工程实践：
 
-### [`AGENTS.md`](./AGENTS.md) · Agent 运行时合规手册
+### [`AGENTS.md`](./quickly/AGENTS.md) · Agent 运行时合规手册
 
 每条规则 = `IF <触发器> THEN <动作>`，按 A1–A9 / B1–B12 / C1–C25 / U1–U7 编号。使用方式：
 
@@ -1410,7 +1410,7 @@ LLM 的隐性偏好（位置、长度、自家、谄媚、锚定）只能通过*
 - **粘贴到 system prompt**——将相关规则的触发器-动作对直接写入 system prompt；
 - **嵌入 PR 模板 / 变更评审表**——把 `§R Release Checklist` 贴进团队评审流程，每次 LLM 调用上线前过检。
 
-### [`README.md`](./README.md) · 人类可读的三档速览
+### [`HUMANS.md`](./quickly/HUMANS.md) · 人类可读的三档速览
 
 5 分钟建立心智模型。包含：
 
