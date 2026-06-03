@@ -68,12 +68,11 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'Effective LLM',
   description: '编写大语言模型应用程序的 50 条具体方法',
-  base: '/effective-llm/',
   lastUpdated: true,
   ignoreDeadLinks: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/effective-llm/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
   ],
 
   themeConfig: {
