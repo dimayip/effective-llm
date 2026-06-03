@@ -11,7 +11,7 @@ site/docs/part3/
 site/docs/part4/
 site/docs/part5/
 site/docs/appendix/
-site/docs/public/
+
 
 # ── VitePress 构建产物 ──
 site/docs/.vitepress/cache/
