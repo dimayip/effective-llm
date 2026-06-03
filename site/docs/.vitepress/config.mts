@@ -83,7 +83,7 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '阅读', link: '/preface' },
       { text: '速查表', link: '/appendix/a' },
-      { text: '下载 PDF', link: '/effective-llm.pdf', target: '_blank', rel: 'noopener' },
+      { text: '下载 PDF', link: 'effective-llm.pdf', target: '_blank', rel: 'noopener' },
     ],
 
     sidebar,
